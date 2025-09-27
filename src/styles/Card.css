@@ -1,0 +1,30 @@
+.card {
+  background: #d3a48f;
+  border: 2px solid #333;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 16px;
+  margin: 12px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
