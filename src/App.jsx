@@ -32,17 +32,29 @@ function App() {
     fetchPokemons();
   }, []);
 
+  const shuffleArray = (array) => {
+  const shuffled = [...array]; 
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+
   const handleClick = (pokemon)=> {
     console.log(`${pokemon.name} has been clicked`)
     
     if (clickedPokemons.includes(pokemon.name)){
-      console.log("You lose, you picked this card twice");
+      alert('You lose. You clicked the same card twice');
       setBestScore((prevBest)=> Math.max(prevBest, currentScore));
       setCurrentScore(0);
       setClickedPokemons([]);
+      setPokemons((prev)=> shuffleArray(prev));
     } else {
       setClickedPokemons((prev)=> [...prev, pokemon.name]);
       setCurrentScore((c)=> c+1);
+      setPokemons((prev)=> shuffleArray(prev));
     }
   }
 
