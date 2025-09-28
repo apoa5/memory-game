@@ -1,14 +1,15 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import '../styles/Card.css';
 
-function Card({name, image}){
+function Card({ name, image, onClick }) {
 
-return(
-    <div className='card'>
-        <img src={image} alt={name} />
-        <h2>{name}</h2>
-    </div>
-);
+    return (
+        <div className='card'
+            onClick={onClick}>
+            <img src={image} alt={name} />
+            <h2>{name}</h2>
+        </div>
+    );
 }
 
 export default Card;
