@@ -79,6 +79,7 @@ function App() {
         <h2 style={{ padding: "20px" }}>Current Score : {currentScore}</h2>
         <h2 style={{ padding: "20px" }}>Best Score : {bestScore}</h2>
       </div>
+      <p style={{textAlign: "center", fontWeight: "bold"}}>Don't click on the same card twice!!</p>
       <div className="card-grid">
         {pokemons.map((poke) => (
           <Card
